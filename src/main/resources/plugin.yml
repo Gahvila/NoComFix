@@ -1,0 +1,6 @@
+name: SignExploitFix
+version: 1.0
+main: fi.jokni.nocomfix.NoComFix
+api-version: 1.18
+author: Jokni
+load: POSTWORLD
