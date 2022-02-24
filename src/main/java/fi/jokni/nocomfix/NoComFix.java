@@ -6,6 +6,7 @@ import io.github.retrooper.packetevents.utils.server.ServerVersion;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class NoComFix extends JavaPlugin {
+    public static NoComFix instance;
     @Override
     public void onLoad() {
         PacketEvents.create(this);
@@ -19,6 +20,7 @@ public final class NoComFix extends JavaPlugin {
     }
     @Override
     public void onEnable() {
+        instance = this;
         PacketEvents.get().registerListener(new PacketListener());
         PacketEvents.get().init();
 
