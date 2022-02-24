@@ -25,6 +25,7 @@ public class PacketListener extends PacketListenerAbstract {
                 ItemStack bStack = new WrappedPacketInSetCreativeSlot(e.getNMSPacket()).getClickedItem();
                 net.minecraft.world.item.ItemStack itemStack = CraftItemStack.asNMSCopy(bStack);
                 if (itemStack.getOrCreateTag().contains("BlockEntityTag")){
+                    //This isnt a perfect fix, but i dont care enough to make it better.
                     if (itemStack.getOrCreateTag().toString().contains("y:255")) {
                         e.setCancelled(true);
                         Bukkit.getScheduler().runTask(NoComFix.instance, new Runnable() {
